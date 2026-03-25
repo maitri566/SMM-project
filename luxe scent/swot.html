@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOT Analysis | LUXE SCENTS Digital Strategy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* GLOBAL STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAV */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #1a1a1a;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a4a4a;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover { color: #c5a059; }
+
+        /* SWOT SPECIFIC STYLES */
+        .swot-hero {
+            background: #1a1a1a;
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .swot-hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .swot-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+        }
+
+        .swot-card {
+            background: white;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 5px solid #c5a059;
+            transition: transform 0.3s ease;
+        }
+
+        .swot-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .swot-card h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #1a1a1a;
+        }
+
+        .swot-card ul {
+            list-style: none;
+        }
+
+        .swot-card ul li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .swot-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #c5a059;
+            font-weight: bold;
+        }
+
+        /* --- UNIFIED LUXURY FOOTER --- */
+        .footer {
+            background: #121212;
+            color: #ffffff;
+            padding: 60px 5% 30px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 80px;
+        }
+
+        .footer h3 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .social-icons {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .social-icons i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-name {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .social-icons a:hover {
+            color: #c5a059;
+        }
+
+        .social-icons a:hover i {
+            transform: translateY(-5px);
+        }
+
+        .social-icons a:hover .social-name {
+            opacity: 1;
+            letter-spacing: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .swot-container { grid-template-columns: 1fr; }
+            .header { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">LUXE SCENTS</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<section class="swot-hero">
+    <h1>Strategic Analysis</h1>
+    <p>Digital Marketing & Brand Positioning for Luxe Scents</p>
+</section>
+
+<div class="swot-container">
+    <div class="swot-card">
+        <h2><i class="fa-solid fa-gem"></i> Strengths</h2>
+        <ul>
+            <li><strong>Premium Brand Identity:</strong> High-end visual aesthetic and artisanal focus differentiate us from mass-market retailers.</li>
+            <li><strong>Immersive User Experience:</strong> Integration of high-quality video backgrounds and detailed olfactory descriptions.</li>
+            <li><strong>Niche Product Selection:</strong> Exclusive focus on rare notes targeting high-intent luxury demographics.</li>
+        </ul>
+    </div>
+
+    <div class="swot-card">
+        <h2><i class="fa-solid fa-chart-line-down"></i> Weaknesses</h2>
+        <ul>
+            <li><strong>High Entry Price Point:</strong> Premium pricing (₹2,499+) may limit market share among certain consumers.</li>
+            <li><strong>Limited Physical Presence:</strong> Digital-first library means customers cannot sample scents physically (Blind Buy risk).</li>
+            <li><strong>New Brand Authority:</strong> Lower organic search ranking compared to established giants in the "Luxury Perfume" space.</li>
+        </ul>
+    </div>
+
+    <div class="swot-card">
+        <h2><i class="fa-solid fa-lightbulb"></i> Opportunities</h2>
+        <ul>
+            <li><strong>Scent Discovery Kits:</strong> Launching sample-sized discovery sets to lower barriers for new customers.</li>
+            <li><strong>Influencer Collaborations:</strong> Partnering with "Perfume-tok" creators to showcase the "Scent Story".</li>
+            <li><strong>AI Scent Profiling:</strong> Implementing an AI quiz to help users find their "Signature Fragrance".</li>
+        </ul>
+    </div>
+
+    <div class="swot-card">
+        <h2><i class="fa-solid fa-triangle-exclamation"></i> Threats</h2>
+        <ul>
+            <li><strong>Counterfeit Markets:</strong> The rise of "dupe" fragrances at a fraction of the cost targeting our audience.</li>
+            <li><strong>Rising Ingredient Costs:</strong> Supply chain volatility for rare ingredients affecting margins.</li>
+            <li><strong>Platform Dependency:</strong> High reliance on social media algorithms for luxury traffic acquisition.</li>
+        </ul>
+    </div>
+</div>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

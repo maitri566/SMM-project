@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE SCENTS | New Arrivals: Escape & Whisky Smoke</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body { margin: 0; padding: 0; background-color: #fcfcfc; font-family: 'Montserrat', sans-serif; }
+        table { border-spacing: 0; }
+        img { border: 0; display: block; }
+        
+        .logo-font { font-family: 'Cinzel', serif; }
+
+        /* --- HEADER & NAVIGATION --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #1a1a1a;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a4a4a;
+            margin-left: 25px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+        
+        /* --- UNIFIED FOOTER STYLES --- */
+        .footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 5% 30px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: 400;
+            color: #ffffff;
+        }
+
+        .social-icons {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .social-icons i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-name {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .social-icons a:hover { color: var(--gold); }
+        .social-icons a:hover i { transform: translateY(-5px); }
+        .social-icons a:hover .social-name { opacity: 1; letter-spacing: 3px; }
+
+        @media screen and (max-width: 800px) {
+            .header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; font-size: 0.7rem; }
+        }
+
+        @media screen and (max-width: 600px) {
+            .container { width: 100% !important; }
+            .stack { display: block !important; width: 100% !important; text-align: center !important; }
+            .social-icons { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">LUXE SCENTS</div>
+        <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+    </header>
+
+    <center>
+        <table class="container" width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; margin: 40px auto; border: 1px solid #eeeeee; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            
+            <tr>
+                <td style="padding: 30px 0; text-align: center;">
+                    <h1 class="logo-font" style="color: #1a1a1a; margin: 0; letter-spacing: 5px; font-weight: bold; text-transform: uppercase; font-size: 22px;">LUXE SCENTS</h1>
+                    <p style="color: #c5a059; font-size: 10px; letter-spacing: 2px; margin-top: 5px; text-transform: uppercase;">The Artisanal Scent Library</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="images/fresh.jpg" alt="LUXE Escape Fragrance in a Tropical Garden" width="600" style="width: 100%; max-width: 600px;">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 40px; text-align: center;">
+                    <h2 class="logo-font" style="color: #1a1a1a; font-size: 26px; font-weight: 300; margin-bottom: 15px;">A Study in Contrasts.</h2>
+                    <p style="color: #666666; font-size: 15px; line-height: 1.7; margin-bottom: 25px;">
+                        Whether you crave the sun-drenched floral notes of the tropics or the deep, smoldering warmth of a private library, our latest additions capture the essence of your next destination.
+                    </p>
+                    <a href="collection.html" style="background-color: #1a1a1a; color: #ffffff; padding: 15px 35px; text-decoration: none; font-size: 13px; font-weight: bold; display: inline-block; letter-spacing: 1px; transition: 0.3s;" onmouseover="this.style.backgroundColor='#c5a059'" onmouseout="this.style.backgroundColor='#1a1a1a'">SHOP NEW ARRIVALS</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 0 20px 40px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9f9f9;">
+                        <tr>
+                            <td class="stack" width="50%" valign="top" style="padding: 20px; text-align: left; border-right: 1px solid #eeeeee;">
+                                <img src="images/escape.jpg" width="240" style="width: 100%; margin-bottom: 15px;">
+                                <h3 class="logo-font" style="margin: 0; font-size: 18px; color: #1a1a1a;">LUXE Escape</h3>
+                                <p style="font-size: 12px; color: #c5a059; font-weight: bold; text-transform: uppercase; margin: 5px 0;">Tropical & Airy</p>
+                                <p style="font-size: 13px; color: #777; line-height: 1.5;">Fresh island florals and sun-warmed moss. A vibrant signature for the bold explorer.</p>
+                            </td>
+                            <td class="stack" width="50%" valign="top" style="padding: 20px; text-align: left;">
+                                <img src="images/whisky_smoke.jpg" width="240" style="width: 100%; margin-bottom: 15px;">
+                                <h3 class="logo-font" style="margin: 0; font-size: 18px; color: #1a1a1a;">Whisky Smoke</h3>
+                                <p style="font-size: 12px; color: #c5a059; font-weight: bold; text-transform: uppercase; margin: 5px 0;">Bold & Sensual</p>
+                                <p style="font-size: 13px; color: #777; line-height: 1.5;">A masterclass in the history of perfumery. Notes of aged oak, rich peat, and tobacco leaf.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 0 40px 40px; text-align: center;">
+                    <div style="border: 2px solid #c5a059; padding: 20px;">
+                        <p style="margin: 0; font-size: 12px; color: #1a1a1a; letter-spacing: 2px; text-transform: uppercase;">Limited Edition Set</p>
+                        <h4 class="logo-font" style="margin: 10px 0; font-size: 20px; color: #1a1a1a;">20% OFF ALL SIGNATURE PAIRS</h4>
+                        <p style="margin: 0; font-size: 16px; font-weight: bold; color: #c5a059;">CODE: DUALITY</p>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </center>
+
+    <footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

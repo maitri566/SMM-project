@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Join the LUXE SCENTS Digital Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* GLOBAL STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: #fcfcfc; color: #333; line-height: 1.6; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+        }
+
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; background: #fff; position: sticky; top: 0;
+            z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: bold; letter-spacing: 3px; color: #1a1a1a; }
+        nav a { text-decoration: none; color: #4a4a4a; margin-left: 25px; font-weight: 500; text-transform: uppercase; font-size: 0.9rem; transition: color 0.3s; }
+        nav a:hover { color: #c5a059; }
+
+        /* CAREER HERO */
+        .career-hero {
+            background: #1a1a1a; color: white; padding: 80px 5%; text-align: center;
+        }
+        .career-hero h1 { font-size: 2.5rem; margin-bottom: 15px; letter-spacing: 2px; }
+
+        /* CAREER SECTIONS */
+        .career-container { max-width: 1100px; margin: 60px auto; padding: 0 5%; }
+        
+        .role-card {
+            display: flex; align-items: center; gap: 50px; margin-bottom: 80px;
+            background: white; padding: 40px; border-radius: 4px; border-left: 5px solid #c5a059;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .role-card:nth-child(even) { flex-direction: row-reverse; border-left: none; border-right: 5px solid #c5a059; }
+
+        .role-text { flex: 1; }
+        .role-text h2 { font-size: 2rem; color: #1a1a1a; margin-bottom: 15px; }
+        .role-text h3 { color: #c5a059; font-size: 1rem; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        .role-text p { margin-bottom: 20px; color: #555; }
+        
+        .skills-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .skills-list li { font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 8px; }
+        .skills-list li i { color: #c5a059; font-size: 0.8rem; }
+
+        .apply-btn {
+            display: inline-block; margin-top: 30px; padding: 10px 25px;
+            background: #1a1a1a; color: white; text-decoration: none;
+            text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s;
+            font-weight: 600;
+        }
+        .apply-btn:hover { background: #c5a059; }
+
+        /* --- UNIFIED FOOTER STYLES --- */
+        .footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 60px 5% 30px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer h3 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: 400;
+            color: #ffffff;
+        }
+
+        .social-icons {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .social-icons i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-name {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .social-icons a:hover { color: #c5a059; }
+        .social-icons a:hover i { transform: translateY(-5px); }
+        .social-icons a:hover .social-name { opacity: 1; letter-spacing: 3px; }
+
+        @media (max-width: 800px) {
+            .role-card, .role-card:nth-child(even) { flex-direction: column; text-align: center; }
+            .skills-list { grid-template-columns: 1fr; text-align: left; margin: 0 auto; width: fit-content; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">LUXE SCENTS</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<section class="career-hero">
+    <h1>Craft the Future of Fragrance</h1>
+    <p>We are looking for digital visionaries to help us define the luxury scent experience online.</p>
+</section>
+
+<div class="career-container">
+    
+    <div class="role-card">
+        <div class="role-text">
+            <h3>Visibility Specialist</h3>
+            <h2>SEO Career</h2>
+            <p>As an SEO specialist at Luxe Scents, you are the architect of our organic growth. You will dive deep into our <strong>Fragrance Library</strong> to ensure that when users search for "Artisanal Scents" or "History of Perfumery," our brand is the first they discover.</p>
+            <ul class="skills-list">
+                <li><i class="fa-solid fa-check"></i> Keyword Research</li>
+                <li><i class="fa-solid fa-check"></i> Technical SEO Audit</li>
+                <li><i class="fa-solid fa-check"></i> Content Optimization</li>
+                <li><i class="fa-solid fa-check"></i> Backlink Strategy</li>
+            </ul>
+            <a href="#" class="apply-btn">View Openings</a>
+        </div>
+    </div>
+
+    <div class="role-card">
+        <div class="role-text">
+            <h3>Growth Engine</h3>
+            <h2>PPC Career</h2>
+            <p>Our PPC experts manage high-stakes campaigns across Search and Display networks. You will be responsible for the precision-targeting of our <strong>Luxury Perfumes</strong>, turning high-intent browsers into loyal fragrance enthusiasts through data-driven bidding.</p>
+            <ul class="skills-list">
+                <li><i class="fa-solid fa-check"></i> Google Ads Management</li>
+                <li><i class="fa-solid fa-check"></i> A/B Copy Testing</li>
+                <li><i class="fa-solid fa-check"></i> ROAS Optimization</li>
+                <li><i class="fa-solid fa-check"></i> Remarketing Funnels</li>
+            </ul>
+            <a href="#" class="apply-btn">View Openings</a>
+        </div>
+    </div>
+
+    <div class="role-card">
+        <div class="role-text">
+            <h3>Community Architect</h3>
+            <h2>Social Media Marketing</h2>
+            <p>Join our creative team to weave our <strong>Scent Story</strong> across Instagram, Pinterest, and TikTok. You will bridge the gap between our artisanal craftsmanship and our community, managing our shared media reputation through stunning visuals and engagement.</p>
+            <ul class="skills-list">
+                <li><i class="fa-solid fa-check"></i> Content Creation</li>
+                <li><i class="fa-solid fa-check"></i> Influencer Relations</li>
+                <li><i class="fa-solid fa-check"></i> Community Management</li>
+                <li><i class="fa-solid fa-check"></i> Social Analytics</li>
+            </ul>
+            <a href="#" class="apply-btn">View Openings</a>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

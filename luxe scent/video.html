@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Experience | LUXE SCENTS Cinema</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- GLOBAL STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: #fcfcfc; color: #333; line-height: 1.6; }
+
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; background: #fff; position: sticky; top: 0;
+            z-index: 1000; border-bottom: 1px solid #eaeaea;
+        }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: bold; letter-spacing: 4px; color: #1a1a1a; }
+        nav a { text-decoration: none; color: #4a4a4a; margin-left: 25px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        nav a:hover { color: #c5a059; }
+
+        .video-hero { background: #1a1a1a; color: white; padding: 80px 5%; text-align: center; }
+        .video-hero h1 { font-family: 'Cinzel', serif; font-size: 3rem; letter-spacing: 2px; }
+
+        .video-section { max-width: 1200px; margin: 40px auto; padding: 0 5% 100px; }
+        .category-title { font-family: 'Cinzel', serif; font-size: 1.5rem; color: #c5a059; margin: 60px 0 30px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; text-transform: uppercase; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+
+        .video-card {
+            background: white; border-radius: 8px; overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.4s ease; border: 1px solid #eee;
+        }
+
+        .video-container { width: 100%; aspect-ratio: 16 / 9; background: #000; position: relative; overflow: hidden; }
+        video { width: 100%; height: 100%; object-fit: cover; cursor: pointer; transition: 0.5s; opacity: 0.9; }
+        .video-card:hover video { opacity: 1; }
+
+        .video-controls {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;
+            opacity: 0; transition: 0.3s ease; z-index: 10;
+        }
+        .video-container:hover .video-controls { opacity: 1; }
+        .control-btn { color: white; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
+        .control-btn:hover { color: #c5a059; }
+
+        .video-info { padding: 25px; }
+        .video-info h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; margin-bottom: 8px; }
+        .video-info p { font-size: 0.85rem; color: #666; margin-bottom: 12px; }
+        .video-tag { font-size: 0.65rem; font-weight: bold; color: #c5a059; text-transform: uppercase; letter-spacing: 1.5px; display: block; }
+
+       /* --- UNIFIED LUXURY FOOTER --- */
+.footer {
+    background: #121212;
+    color: #ffffff;
+    padding: 60px 5% 30px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 80px;
+}
+
+.footer h3 {
+    font-family: 'Cinzel', serif;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.social-icons {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+}
+
+.social-icons i {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.social-name {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.social-icons a:hover {
+    color: #c5a059;
+}
+
+.social-icons a:hover i {
+    transform: translateY(-5px);
+}
+
+.social-icons a:hover .social-name {
+    opacity: 1;
+    letter-spacing: 3px;
+}
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">LUXE SCENTS</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<section class="video-hero">
+    <h1>The Art of Motion</h1>
+    <p>Discover the 12 pillars of our visual storytelling and digital innovation.</p>
+</section>
+
+<main class="video-section">
+
+    <h2 class="category-title"><i class="fa-solid fa-gem"></i> Brand Identity</h2>
+    <div class="video-grid">
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v3" loop muted onmouseover="this.play(); updateIcon('v3-btn', true)" onmouseout="this.pause(); updateIcon('v3-btn', false)"><source src="videos/v3.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v3-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v3', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v3', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v3')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: Brand Video</span>
+                <h3>The Spirit of Luxe Scents</h3>
+                <p>Our flagship cinematic experience. A deep dive into our brand values, heritage, and luxury lifestyle.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v1" loop muted onmouseover="this.play(); updateIcon('v1-btn', true)" onmouseout="this.pause(); updateIcon('v1-btn', false)"><source src="videos/v1.mp4" type="video/mp4"></video>
+                <div class="video-controls">
+                    <div style="display: flex; gap: 20px;"><i id="v1-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v1', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v1', this)"></i></div>
+                    <i class="fa-solid fa-expand control-btn" onclick="toggleFull('v1')"></i>
+                </div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: Animation</span>
+                <h3>Visualizing Olfactory Notes</h3>
+                <p>A mesmerizing motion graphics piece showing how molecules of Midnight Oud blend into a signature scent.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v5" loop muted onmouseover="this.play(); updateIcon('v5-btn', true)" onmouseout="this.pause(); updateIcon('v5-btn', false)"><source src="videos/v5.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v5-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v5', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v5', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v5')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: Event Video</span>
+                <h3>Paris Collection Launch</h3>
+                <p>Highlights from our private gala, featuring red carpet interviews and the exclusive unveiling of the Fragrance Library.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="category-title"><i class="fa-solid fa-book-open"></i> Education & Utility</h2>
+    <div class="video-grid">
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v4" loop muted onmouseover="this.play(); updateIcon('v4-btn', true)" onmouseout="this.pause(); updateIcon('v4-btn', false)"><source src="videos/v4.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v4-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v4', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v4', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v4')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: Demo Video</span>
+                <h3>Unboxing the Discovery Kit</h3>
+                <p>A detailed walk-through of our sample sets, showing you exactly what to expect when your order arrives.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v6" loop muted onmouseover="this.play(); updateIcon('v6-btn', true)" onmouseout="this.pause(); updateIcon('v6-btn', false)"><source src="videos/v6.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v6-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v6', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v6', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v6')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: Explanation Video</span>
+                <h3>The Science of Scent</h3>
+                <p>Explaining the technical side of how artisanal scents interact with skin chemistry to create a unique profile.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v7" loop muted onmouseover="this.play(); updateIcon('v7-btn', true)" onmouseout="this.pause(); updateIcon('v7-btn', false)"><source src="videos/v7.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v7-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v7', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v7', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v7')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: How-To Video</span>
+                <h3>Perfecting the Pulse Points</h3>
+                <p>A step-by-step guide on the best application techniques to ensure your luxury perfume lasts throughout the day.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="category-title"><i class="fa-solid fa-vr-cardboard"></i> Immersive Tech</h2>
+    <div class="video-grid">
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v2" loop muted onmouseover="this.play(); updateIcon('v2-btn', true)" onmouseout="this.pause(); updateIcon('v2-btn', false)"><source src="videos/v2.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v2-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v2', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v2', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v2')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: AR Experience</span>
+                <h3>Digital Bottle Placement</h3>
+                <p>See our AR app in action as it projects our artisanal bottles onto your vanity to help you choose the right size.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v12" loop muted onmouseover="this.play(); updateIcon('v12-btn', true)" onmouseout="this.pause(); updateIcon('v12-btn', false)"><source src="videos/v12.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v12-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v12', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v12', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v12')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: VR Tour</span>
+                <h3>Inside the Rose Fields</h3>
+                <p>A 360-degree immersive tour of our sustainable rose gardens in Bulgaria. Best viewed with a VR headset.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v8" loop muted onmouseover="this.play(); updateIcon('v8-btn', true)" onmouseout="this.pause(); updateIcon('v8-btn', false)"><source src="videos/v8.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v8-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v8', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v8', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v8')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: Expert Interview</span>
+                <h3>Mastering the Notes</h3>
+                <p>Our Lead Perfumer sits down with industry experts to discuss the future of the History of Perfumery.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="category-title"><i class="fa-solid fa-heart"></i> Personal Connection</h2>
+    <div class="video-grid">
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v9" loop muted onmouseover="this.play(); updateIcon('v9-btn', true)" onmouseout="this.pause(); updateIcon('v9-btn', false)"><source src="videos/v9.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v9-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v9', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v9', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v9')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: Livestream</span>
+                <h3>Live Q&A: Scent Selection</h3>
+                <p>Recording of our weekly live session where we help users find their Signature Fragrance in real-time.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v10" loop muted onmouseover="this.play(); updateIcon('v10-btn', true)" onmouseout="this.pause(); updateIcon('v10-btn', false)"><source src="videos/v10.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v10-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v10', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v10', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v10')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: Personalized Message</span>
+                <h3>The Gift of a Message</h3>
+                <p>An example of the customized video greetings you can send along with a gift-purchased Luxe Scents bottle.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-container">
+                <video id="v11" loop muted onmouseover="this.play(); updateIcon('v11-btn', true)" onmouseout="this.pause(); updateIcon('v11-btn', false)"><source src="videos/v11.mp4" type="video/mp4"></video>
+                <div class="video-controls"><div style="display: flex; gap: 20px;"><i id="v11-btn" class="fa-solid fa-play control-btn" onclick="togglePlay('v11', this)"></i><i class="fa-solid fa-volume-xmark control-btn" onclick="toggleMute('v11', this)"></i></div><i class="fa-solid fa-expand control-btn" onclick="toggleFull('v11')"></i></div>
+            </div>
+            <div class="video-info">
+                <span class="video-tag">Type: Testimonial</span>
+                <h3>Scent Stories: Customer Tales</h3>
+                <p>Real people sharing how Luxe Scents helped them discover a fragrance that perfectly matches their personality.</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function updateIcon(btnId, isPlaying) {
+        const btn = document.getElementById(btnId);
+        if (isPlaying) btn.classList.replace('fa-play', 'fa-pause');
+        else btn.classList.replace('fa-pause', 'fa-play');
+    }
+
+    function togglePlay(id, btn) {
+        const video = document.getElementById(id);
+        if (video.paused) { video.play(); btn.classList.replace('fa-play', 'fa-pause'); }
+        else { video.pause(); btn.classList.replace('fa-pause', 'fa-play'); }
+    }
+
+    function toggleMute(id, btn) {
+        const video = document.getElementById(id);
+        video.muted = !video.muted;
+        btn.classList.toggle('fa-volume-high', !video.muted);
+        btn.classList.toggle('fa-volume-xmark', video.muted);
+    }
+
+    function toggleFull(id) {
+        const video = document.getElementById(id);
+        if (video.requestFullscreen) video.requestFullscreen();
+        else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+    }
+</script>
+
+</body>
+</html>

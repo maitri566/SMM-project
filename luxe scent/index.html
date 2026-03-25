@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>LUXE SCENTS | Luxury Perfumes & Signature Fragrances Online</title>
+    <meta name="description" content="Explore LUXE SCENTS, your ultimate Fragrance Library. Discover artisanal scents, from Smoky Oud to Madagascar Vanilla. Find your signature fragrance today.">
+    <meta name="keywords" content="Luxury perfumes, Signature Fragrance, Artisanal scents, Midnight Oud, Rose Elixir, Olfactory notes, Scent Story, History of Perfumery">
+    <link rel="canonical" href="https://yourdomain.com/index.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+    /* GLOBAL STYLES */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+        background-color: #fcfcfc;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Cinzel', serif;
+    }
+
+    /* HEADER & NAV */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+        background: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+        font-family: 'Cinzel', serif;
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        color: #1a1a1a;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #4a4a4a;
+        margin-left: 25px;
+        font-weight: 500;
+        transition: 0.3s;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }
+
+    nav a:hover, nav a.active {
+        color: #c5a059;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+    }
+
+    #bg-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        object-fit: cover;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+    }
+
+    .hero-content h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 35px;
+        background: #c5a059;
+        color: white;
+        text-decoration: none;
+        margin-top: 25px;
+        border-radius: 2px;
+        transition: 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn:hover {
+        background: #a38345;
+    }
+
+    /* PRODUCT GRID */
+    .products {
+        padding: 80px 5%;
+        text-align: center;
+    }
+
+    .products h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #1a1a1a;
+    }
+
+    .product-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: nowrap;
+        padding: 20px 0;
+        overflow-x: auto;
+    }
+
+    .product-card {
+        flex: 1;
+        min-width: 300px;
+        max-width: 350px;
+        background: white;
+        padding: 20px;
+        border: 1px solid #eee;
+        transition: 0.4s;
+        text-align: left;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+
+    .tagline {
+        color: #c5a059;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .notes {
+        font-size: 0.85rem;
+        color: #777;
+        margin: 10px 0;
+    }
+
+    .price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #1a1a1a;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* BLOG PREVIEW */
+    .blog-preview {
+        background: #f9f9f9;
+        padding: 80px 5%;
+    }
+
+    .preview-card {
+        background: white;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px;
+        border-left: 5px solid #c5a059;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .read-more {
+        color: #c5a059;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    /* FOOTER */
+    .footer {
+        background: #1a1a1a;
+        color: white;
+        padding: 60px 5% 30px;
+        text-align: center;
+    }
+
+    .footer h3 {
+        font-family: 'Cinzel', serif;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+
+    .social-icons {
+        margin: 40px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .social-icons a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.4s ease;
+    }
+
+    .social-icons i {
+        font-size: 1.4rem;
+        transition: transform 0.3s ease;
+    }
+
+    .social-name {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 400;
+        opacity: 0.6;
+    }
+
+    .social-icons a:hover {
+        color: #c5a059;
+    }
+
+    .social-icons a:hover i {
+        transform: translateY(-5px);
+    }
+
+    .social-icons a:hover .social-name {
+        opacity: 1;
+        letter-spacing: 3px;
+    }
+
+    /* RESPONSIVENESS */
+    @media (max-width: 768px) {
+        .hero-content h1 { font-size: 2.2rem; }
+        .header { flex-direction: column; gap: 15px; }
+        nav a { margin: 0 10px; font-size: 0.8rem; }
+    }
+    </style>
+    
+    <script>
+    (function() {
+        const hasAccount = localStorage.getItem('hasAccount');
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!hasAccount && !isLoggedIn) {
+            console.log("Welcome! New users can explore our artisanal scents below.");
+        }
+    })();
+    </script>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">LUXE SCENTS</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<section class="hero">
+    <div class="hero-overlay"></div> 
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="vecteezy_ai-generated-perfume-bottle-in-flowers-fragrance-on_38597710.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+        <h1>LUXE SCENTS: Find Your Signature Fragrance</h1>
+        <p>Explore our Artisanal Scents and Luxury Perfumes crafted to define your personality.</p>
+        <a href="collection.html" class="btn">Explore Scent Library</a>
+    </div>
+</section>
+
+<section class="products">
+    <h2>Featured Luxury Perfumes</h2>
+    <div class="product-grid">
+
+        <div class="product-card">
+            <a href="collection.html#blooming" style="text-decoration: none; color: inherit;">
+            <img src="images/blooming_bouquet.png" alt="Blooming Bouquet Luxury Perfume - Floral & Powdery">
+            <h3>Blooming Bouquet</h3>
+            <p class="tagline">Floral & Powdery Artisanal Scent</p>
+            <p class="description">An enchanting blend of rare Bulgarian roses and sweet peony, highlight of our fragrance library.</p>
+            <p class="notes"><strong>Olfactory Notes:</strong> Bulgarian Rose, Peony, White Musk</p>
+            <span class="price">₹2,499</span>
+            </a>
+        </div>
+
+        <div class="product-card">
+            <a href="collection.html#sauvage" style="text-decoration: none; color: inherit;">
+            <img src="images/sauvage.jpg" alt="Sauvage Men's Luxury Fragrance">
+            <h3>Sauvage</h3>
+            <p class="tagline">Raw & Noble Freshness</p>
+            <p class="description">A radically fresh composition, featuring notes like Reggio Bergamot and Sichuan Pepper.</p>
+            <p class="notes"><strong>Olfactory Notes:</strong> Reggio Bergamot, Sichuan Pepper, Ambroxan</p>
+            <span class="price">₹3,499</span>
+            </a>
+        </div>
+
+        <div class="product-card">
+            <a href="collection.html#amore" style="text-decoration: none; color: inherit;">
+            <img src="images/amore.jpg" alt="Amore Romantic Unisex Perfume">
+            <h3>Amore</h3>
+            <p class="tagline">Romantic & Unisex Signature Scent</p>
+            <p class="description">A warm, sunset-inspired fragrance capturing the feeling of eternal love with Amber and Musk.</p>
+            <p class="notes"><strong>Olfactory Notes:</strong> Amber, Soft Musk, Golden Citron</p>
+            <span class="price">₹2,899</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="blog-preview">
+    <div class="container">
+        <h2>From Our Scent Library</h2>
+        <div class="preview-card">
+            <div class="preview-text">
+                <h3>Find Your Signature Fragrance Guide</h3>
+                <p>Discover the silent power of a scent and how luxury perfumes like Midnight Oud define your unique personality...</p>
+                <a href="blog.html" class="read-more">Read Full Perfume Review &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-summary" style="padding: 60px 5%; background-color: #ffffff; border-top: 1px solid #eee;">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <h2 style="font-family: 'Cinzel', serif; color: #c5a059; margin-bottom: 30px;">The Essence of Luxe Scents</h2>
+        
+        <p style="font-size: 1.1rem; color: #4a4a4a; margin-bottom: 40px; line-height: 1.8;">
+            At <strong>Luxe Scents</strong>, we believe that <span style="border-bottom: 2px solid #c5a059;">luxury perfumes</span> are more than just a scent; they are an extension of your identity. Our journey began with a passion for the <strong>History of Perfumery</strong>, blending ancient traditions with modern elegance to help you find your <span style="border-bottom: 2px solid #c5a059;">Signature Fragrance</span>.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left;">
+            <div class="about-point">
+                <h3 style="color: #1a1a1a;">1. Artisanal Craftsmanship</h3>
+                <p style="color: #666;">Each bottle is a masterpiece. We use rare <strong>olfactory notes</strong> like Smoky Oud and Madagascar Vanilla to create long-lasting, complex scents.</p>
+            </div>
+            <div class="about-point">
+                <h3 style="color: #1a1a1a;">2. Sustainable Luxury</h3>
+                <p style="color: #666;">We source our ingredients from sustainable forests and organic farms to protect the world that inspires our fragrances.</p>
+            </div>
+            <div class="about-point">
+                <h3 style="color: #1a1a1a;">3. Personalized Experience</h3>
+                <p style="color: #666;">Our mission is to guide you through our fragrance library to discover the scent that perfectly matches your personality.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="padding: 40px 5%; background: #fcfcfc; text-align: center; border-top: 1px solid #eee;">
+    <div style="max-width: 800px; margin: 0 auto; font-size: 0.9rem; color: #777; line-height: 1.8;">
+        <p>
+            <strong>Trending in our Fragrance Library:</strong> 
+            Golden Amber, Midnight Oud, Midnight Jasmine, Rose Elixir, and Ocean Breeze. 
+            Experience the <em>History of Perfumery</em> through our curated collection of 
+            Warm & Luxurious and Bold & Sensual scents.
+        </p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+<script src='https://cdn.jotfor.ms/agent/embedjs/019d18d83797778983032c90d33b7b327c3a/embed.js'>
+</script>
+</body>
+</html>

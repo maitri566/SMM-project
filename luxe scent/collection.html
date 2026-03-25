@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE SCENTS | Fragrance Library</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+		/* COLLECTION PAGE - ELEGANT BRIGHT STYLE */
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --light-bg: #fdfbf7;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        body {
+            background-color: var(--light-bg);
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+            color: var(--dark);
+        }
+
+        /* FILTER SECTION */
+        .filter-section {
+            padding: 60px 5% 30px;
+            text-align: center;
+        }
+
+        .filter-section h1 {
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid #ddd;
+            padding: 10px 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #666;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gold);
+            color: white;
+            border-color: var(--gold);
+        }
+
+        /* MASONRY / UNORDERED GRID */
+        .collection-detail {
+            padding: 40px 5%;
+        }
+
+        .masonry-container {
+            column-count: 3; 
+            column-gap: 30px; 
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 992px) {
+            .masonry-container { column-count: 2; }
+        }
+
+        @media (max-width: 600px) {
+            .masonry-container { column-count: 1; }
+        }
+
+        .scent-card {
+            display: inline-block; 
+            width: 100%;
+            background: #ffffff;
+            margin-bottom: 30px; 
+            padding: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            break-inside: avoid;
+        }
+
+        .scent-card:hover {
+            transform: translateY(-10px);
+            border-color: #c5a059;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .scent-card img {
+            width: 100%;
+            height: auto; 
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .scent-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .scent-info .description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .price-val {
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* BUTTONS */
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .cart-btn, .details-btn {
+            padding: 10px;
+            font-size: 0.7rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cart-btn {
+            background: var(--dark);
+            color: white;
+            border: 1px solid var(--dark);
+        }
+
+        .cart-btn:hover { 
+            background: var(--gold); 
+            border-color: var(--gold);
+        }
+
+        .details-btn {
+            background: transparent;
+            border: 1px solid var(--dark);
+            color: var(--dark);
+        }
+
+        .details-btn:hover { background: #eee; }
+
+        /* MODAL STYLES */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 40px;
+            width: 80%;
+            max-width: 900px;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .modal-flex {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .modal-flex img {
+            width: 40%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .close:hover { color: var(--gold); }
+
+        /* TOAST MESSAGE */
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: var(--gold);
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 3000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        /* LUXURY NAVIGATION BAR */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%; 
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px); 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 6px; 
+            color: #1a1a1a;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a4a4a;
+            margin: 0 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.75rem; 
+            letter-spacing: 2.5px;
+            position: relative;
+            transition: color 0.4s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: #c5a059;
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a:hover, nav a.active { color: #c5a059; }
+
+        .nav-icon {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-left: 10px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            color: #c5a059;
+            transform: translateY(-2px); 
+        }
+
+        /* --- UNIFIED LUXURY FOOTER --- */
+        .footer {
+            background: #121212;
+            color: #ffffff;
+            padding: 60px 5% 30px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 60px;
+        }
+
+        .footer h3 {
+    color: #ffffff; /* This forces the text to be white */
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+        .social-icons {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .social-icons i { font-size: 1.4rem; transition: transform 0.3s ease; }
+        .social-name { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 400; opacity: 0.6; }
+        
+        .social-icons a:hover { color: #c5a059; }
+        .social-icons a:hover i { transform: translateY(-5px); }
+        .social-icons a:hover .social-name { opacity: 1; letter-spacing: 3px; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header { padding: 20px 5%; flex-direction: column; gap: 15px;}
+            .logo { font-size: 1.2rem; letter-spacing: 3px; }
+            nav { flex-wrap: wrap; justify-content: center; }
+            nav a { margin: 5px; font-size: 0.6rem; letter-spacing: 1.5px; }
+            .modal-flex { flex-direction: column; }
+            .modal-flex img { width: 100%; }
+        }
+
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+	</style>
+</head>
+<body>
+
+<div id="cart-toast" class="toast">Item added to cart!</div>
+
+<header class="header">
+    <div class="logo">LUXE SCENTS</div>
+   <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<section class="filter-section">
+    <h1>The Fragrance Library</h1>
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterCat('all', event)">All Scents</button>
+        <button class="filter-btn" onclick="filterCat('male', event)">Men</button>
+        <button class="filter-btn" onclick="filterCat('female', event)">Women</button>
+        <button class="filter-btn" onclick="filterCat('unisex', event)">Unisex</button>
+    </div>
+</section>
+
+<section class="collection-detail">
+    <div class="masonry-container" id="collection-grid">
+        
+        <div class="scent-card male">
+            <img src="images/sauvage.jpg" alt="Sauvage">
+            <div class="scent-info">
+                <h3>Sauvage</h3>
+                <p class="description">A radical composition of raw and noble ingredients. Reggio Bergamot provides a zesty opening, while powerful woody trails of Ambroxan anchor the scent. Inspired by wide-open spaces and the ozone-blue sky sprawled above a rocky landscape. It is a fragrance that captures the spirit of the wild and untamed man, leaving a powerful and unforgettable impression.</p>
+                <p class="price-val">₹3,499</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Sauvage')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Sauvage', 'images/sauvage.jpg', 'A radical composition of raw and noble ingredients. Reggio Bergamot provides a zesty opening, while powerful woody trails of Ambroxan anchor the scent. Inspired by wide-open spaces and the ozone-blue sky sprawled above a rocky landscape. It is a fragrance that captures the spirit of the wild and untamed man, leaving a powerful and unforgettable impression.', '₹3,499', 'Men')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card male">
+            <img src="images/dark_side.jpg" alt="Dark Side">
+            <div class="scent-info">
+                <h3>Dark Side</h3>
+                <p class="description">A mysterious and intoxicating fragrance designed specifically for the night. It features deep layers of incense blended with dark patchouli and earthy undertones. Perfect for those who enjoy a bold, sophisticated aroma that lingers throughout the evening hours. This scent leaves an unforgettable trail of mystery and elegance, making it ideal for the man who thrives in the shadows.</p>
+                <p class="price-val">₹2,999</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Dark Side')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Dark Side', 'images/dark_side.jpg', 'A mysterious and intoxicating fragrance designed specifically for the night. It features deep layers of incense blended with dark patchouli and earthy undertones. Perfect for those who enjoy a bold, sophisticated aroma that lingers throughout the evening hours. This scent leaves an unforgettable trail of mystery and elegance, making it ideal for the man who thrives in the shadows.', '₹2,999', 'Men')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card male">
+            <img src="images/intense.jpg" alt="Intense">
+            <div class="scent-info">
+                <h3>Intense</h3>
+                <p class="description">A fiery and commanding blend of black pepper and aged leather. This fragrance is designed for the modern man who exudes confidence and natural strength. Its warm, spicy heart is balanced by a subtle hint of citrus for a multi-dimensional experience. It is the perfect choice for high-stakes meetings or powerful evening events where your presence needs to be felt and remembered.</p>
+                <p class="price-val">₹3,199</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Intense')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Intense', 'images/intense.jpg', 'A fiery and commanding blend of black pepper and aged leather. This fragrance is designed for the modern man who exudes confidence and natural strength. Its warm, spicy heart is balanced by a subtle hint of citrus for a multi-dimensional experience. It is the perfect choice for high-stakes meetings or powerful evening events where your presence needs to be felt and remembered.', '₹3,199', 'Men')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card male">
+            <img src="images/midnight_oud.jpg" alt="Midnight Oud">
+            <div class="scent-info">
+                <h3>Midnight Oud</h3>
+                <p class="description">A rich, smoky agarwood essence harvested at the peak of the desert night. Combined with rare dark leather and exotic spices, this fragrance offers an unparalleled depth. It is the gold standard for luxury oud, leaving a trail of opulence and ancient heritage. Ideal for connoisseurs who appreciate the true, raw power of traditional Middle Eastern perfumery and long-lasting projection.</p>
+                <p class="price-val">₹3,299</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Midnight Oud')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Midnight Oud', 'images/midnight_oud.jpg', 'A rich, smoky agarwood essence harvested at the peak of the desert night. Combined with rare dark leather and exotic spices, this fragrance offers an unparalleled depth. It is the gold standard for luxury oud, leaving a trail of opulence and ancient heritage. Ideal for connoisseurs who appreciate the true, raw power of traditional Middle Eastern perfumery and long-lasting projection.', '₹3,299', 'Men')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card male">
+            <img src="images/night_sky.jpg" alt="Night Sky">
+            <div class="scent-info">
+                <h3>Night Sky</h3>
+                <p class="description">Capturing the essence of fresh air and celestial light in a sleek bottle. This scent features high-altitude floral notes sitting atop a galactic woody base. It provides a clean, airy, yet powerful presence that feels both modern and eternally timeless. Perfect for the visionary man who looks beyond the horizon for his next great adventure under the stars.</p>
+                <p class="price-val">₹2,899</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Night Sky')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Night Sky', 'images/night_sky.jpg', 'Capturing the essence of fresh air and celestial light in a sleek bottle. This scent features high-altitude floral notes sitting atop a galactic woody base. It provides a clean, airy, yet powerful presence that feels both modern and eternally timeless. Perfect for the visionary man who looks beyond the horizon for his next great adventure under the stars.', '₹2,899', 'Men')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card male">
+            <img src="images/ocean.jpg" alt="Ocean">
+            <div class="scent-info">
+                <h3>Ocean</h3>
+                <p class="description">A crisp and zesty journey through the Mediterranean coast. Sharp sea salt meets sun-drenched bergamot and aquatic minerals for an instant burst of energy. It is an invigorating fragrance that mirrors the cooling sensation of a summer breeze by the waves. Whether at the office or on the beach, it keeps you feeling revitalized, clean, and effortlessly fresh all day long.</p>
+                <p class="price-val">₹2,199</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Ocean')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Ocean', 'images/ocean.jpg', 'A crisp and zesty journey through the Mediterranean coast. Sharp sea salt meets sun-drenched bergamot and aquatic minerals for an instant burst of energy. It is an invigorating fragrance that mirrors the cooling sensation of a summer breeze by the waves. Whether at the office or on the beach, it keeps you feeling revitalized, clean, and effortlessly fresh all day long.', '₹2,199', 'Men')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card male">
+            <img src="images/victory.jpg" alt="Victory">
+            <div class="scent-info">
+                <h3>Victory</h3>
+                <p class="description">A triumphant blend of earthy oakmoss and laurel leaves celebrating achievement. Designed for the man who strives for excellence, this scent is grounded in tradition but elevated by citrus. It offers a sense of strength, heritage, and undeniable success in every single spray. Wear it as a badge of honor for your daily triumphs and the significant milestones that define your legacy.</p>
+                <p class="price-val">₹3,599</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Victory')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Victory', 'images/victory.jpg', 'A triumphant blend of earthy oakmoss and laurel leaves celebrating achievement. Designed for the man who strives for excellence, this scent is grounded in tradition but elevated by citrus. It offers a sense of strength, heritage, and undeniable success in every single spray. Wear it as a badge of honor for your daily triumphs and the significant milestones that define your legacy.', '₹3,599', 'Men')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card male">
+            <img src="images/whisky_smoke.jpg" alt="Whisky Smoke">
+            <div class="scent-info">
+                <h3>Whisky Smoke</h3>
+                <p class="description">Sophisticated notes of aged whisky paired with premium tobacco leaf. This fragrance evokes the atmosphere of a private library or a classic cigar lounge. It is deep, warm, and timeless, making it the perfect choice for formal evening wear and cold weather. A masculine masterpiece that speaks of wisdom, maturity, and highly refined luxury tastes for the true gentleman.</p>
+                <p class="price-val">₹3,099</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Whisky Smoke')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Whisky Smoke', 'images/whisky_smoke.jpg', 'Sophisticated notes of aged whisky paired with premium tobacco leaf. This fragrance evokes the atmosphere of a private library or a classic cigar lounge. It is deep, warm, and timeless, making it the perfect choice for formal evening wear and cold weather. A masculine masterpiece that speaks of wisdom, maturity, and highly refined luxury tastes for the true gentleman.', '₹3,099', 'Men')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card female">
+            <img src="images/blooming_bouquet.png" alt="Blooming Bouquet">
+            <div class="scent-info">
+                <h3>Blooming Bouquet</h3>
+                <p class="description">A delicate floral fragrance that captures the essence of a spring garden. Notes of pink peony and Damascus rose are refreshed by a zesty Calabrian bergamot opening. The poetic trail is edged with white musks, making it as light and fresh as a real bouquet. It is the ultimate feminine scent for those who love timeless elegance and soft, blossoming floral beauty.</p>
+                <p class="price-val">₹2,499</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Blooming Bouquet')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Blooming Bouquet', 'images/blooming_bouquet.png', 'A delicate floral fragrance that captures the essence of a spring garden. Notes of pink peony and Damascus rose are refreshed by a zesty Calabrian bergamot opening. The poetic trail is edged with white musks, making it as light and fresh as a real bouquet. It is the ultimate feminine scent for those who love timeless elegance and soft, blossoming floral beauty.', '₹2,499', 'Women')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card female">
+            <img src="images/cherry_wine.jpg" alt="Cherry Wine">
+            <div class="scent-info">
+                <h3>Cherry Wine</h3>
+                <p class="description">Intoxicating notes of black cherry blended with vintage red wine accords. This deep, sweet fragrance is both playful and seductive, perfect for a romantic night out. Hints of toasted oak and vanilla pods add a gourmand finish that makes it truly irresistible. It is a bold statement piece for the woman who isn't afraid to be noticed and admired for her unique charm.</p>
+                <p class="price-val">₹2,899</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Cherry Wine')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Cherry Wine', 'images/cherry_wine.jpg', 'Intoxicating notes of black cherry blended with vintage red wine accords. This deep, sweet fragrance is both playful and seductive, perfect for a romantic night out. Hints of toasted oak and vanilla pods add a gourmand finish that makes it truly irresistible. It is a bold statement piece for the woman who isn\'t afraid to be noticed and admired for her unique charm.', '₹2,899', 'Women')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card female">
+            <img src="images/escape.jpg" alt="Escape">
+            <div class="scent-info">
+                <h3>Escape</h3>
+                <p class="description">A tropical journey featuring creamy coconut and exotic white florals. Imagine a hidden island getaway where the air is filled with the scent of gardenias and sea salt. It is a warm, relaxing fragrance that feels like an eternal summer vacation in a single bottle. Escape the everyday hustle and immerse yourself in this sun-drenched paradise fragrance that celebrates freedom.</p>
+                <p class="price-val">₹2,100</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Escape')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Escape', 'images/escape.jpg', 'A tropical journey featuring creamy coconut and exotic white florals. Imagine a hidden island getaway where the air is filled with the scent of gardenias and sea salt. It is a warm, relaxing fragrance that feels like an eternal summer vacation in a single bottle. Escape the everyday hustle and immerse yourself in this sun-drenched paradise fragrance that celebrates freedom.', '₹2,100', 'Women')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card female">
+            <img src="images/bloom.jpg" alt="Bloom">
+            <div class="scent-info">
+                <h3>Bloom</h3>
+                <p class="description">A rich, authentic garden experience featuring tuberose and jasmine blossoms. Created to unfold like its name, this scent transports you to a vast garden filled with many flowers. It is a pure, intense floral experience that celebrates natural beauty and feminine vitality. Perfect for daytime wear, it brings a touch of nature's elegance to your every movement and conversation.</p>
+                <p class="price-val">₹2,750</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Bloom')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Bloom', 'images/bloom.jpg', 'A rich, authentic garden experience featuring tuberose and jasmine blossoms. Created to unfold like its name, this scent transports you to a vast garden filled with many flowers. It is a pure, intense floral experience that celebrates natural beauty and feminine vitality. Perfect for daytime wear, it brings a touch of nature\'s elegance to your every movement and conversation.', '₹2,750', 'Women')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card female">
+            <img src="images/love_muse.jpg" alt="Love Muse">
+            <div class="scent-info">
+                <h3>Love Muse</h3>
+                <p class="description">A seductive blend of white musk and sweet Madagascar vanilla. This romantic fragrance is soft yet captivating, designed for the modern muse who inspires love and creativity. Its creamy finish is both comforting and deeply alluring, creating an aura of grace and charm. Ideal for special dates or when you want to feel your most enchanting, beautiful, and confident self.</p>
+                <p class="price-val">₹3,200</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Love Muse')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Love Muse', 'images/love_muse.jpg', 'A seductive blend of white musk and sweet Madagascar vanilla. This romantic fragrance is soft yet captivating, designed for the modern muse who inspires love and creativity. Its creamy finish is both comforting and deeply alluring, creating an aura of grace and charm. Ideal for special dates or when you want to feel your most enchanting, beautiful, and confident self.', '₹3,200', 'Women')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card female">
+            <img src="images/ocean_breeze.jpg" alt="Ocean Breeze">
+            <div class="scent-info">
+                <h3>Ocean Breeze</h3>
+                <p class="description">Refreshing sea spray mixed with the delicate scent of aquatic lilies. This fragrance provides a cool, calm, and airy feeling, perfect for daily wear in warm summer climates. It is light enough for the office but distinct enough to leave a refreshing impression. Experience the serenity of the shoreline every time you spray this revitalizing and clean aquatic masterpiece.</p>
+                <p class="price-val">₹1,999</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Ocean Breeze')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Ocean Breeze', 'images/ocean_breeze.jpg', 'Refreshing sea spray mixed with the delicate scent of aquatic lilies. This fragrance provides a cool, calm, and airy feeling, perfect for daily wear in warm summer climates. It is light enough for the office but distinct enough to leave a refreshing impression. Experience the serenity of the shoreline every time you spray this revitalizing and clean aquatic masterpiece.', '₹1,999', 'Women')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card female">
+            <img src="images/paris.jpg" alt="Paris">
+            <div class="scent-info">
+                <h3>Paris</h3>
+                <p class="description">Capturing the chic elegance of a Parisian evening along the Seine river. Centered around precious iris flowers and soft powdery notes, this fragrance exudes timeless luxury. It is a sophisticated, classic scent for the woman who loves high fashion and urban grace. Step into a world of glamour and European sophistication with every single drop of this elite perfume.</p>
+                <p class="price-val">₹3,400</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Paris')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Paris', 'images/paris.jpg', 'Capturing the chic elegance of a Parisian evening along the Seine river. Centered around precious iris flowers and soft powdery notes, this fragrance exudes timeless luxury. It is a sophisticated, classic scent for the woman who loves high fashion and urban grace. Step into a world of glamour and European sophistication with every single drop of this elite perfume.', '₹3,400', 'Women')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card female">
+            <img src="images/rose_elixir.png" alt="Rose Elixir">
+            <div class="scent-info">
+                <h3>Rose Elixir</h3>
+                <p class="description">A liquid rose gold experience featuring the pure essence of Damask rose. This intense elixir is brightened by a hint of citrus and grounded by soft precious wood. It represents the golden standard of rose perfumes, feeling both royal and modern. A timeless tribute to the queen of flowers, designed for the woman who embodies classic beauty and royal grace.</p>
+                <p class="price-val">₹2,650</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Rose Elixir')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Rose Elixir', 'images/rose_elixir.png', 'A liquid rose gold experience featuring the pure essence of Damask rose. This intense elixir is brightened by a hint of citrus and grounded by soft precious wood. It represents the golden standard of rose perfumes, feeling both royal and modern. A timeless tribute to the queen of flowers, designed for the woman who embodies classic beauty and royal grace.', '₹2,650', 'Women')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card unisex">
+            <img src="images/fresh.jpg" alt="Fresh">
+            <div class="scent-info">
+                <h3>Fresh</h3>
+                <p class="description">An invigorating waterfall of crisp citrus and cooling mountain mint. This unisex scent is designed to provide an instant burst of energy for anyone who wears it. It is clean, bright, and universally appealing, making it the ideal choice for any season. Whether you are hitting the gym or the boardroom, Fresh keeps you at your absolute peak performance and clarity.</p>
+                <p class="price-val">₹2,299</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Fresh')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Fresh', 'images/fresh.jpg', 'An invigorating waterfall of crisp citrus and cooling mountain mint. This unisex scent is designed to provide an instant burst of energy for anyone who wears it. It is clean, bright, and universally appealing, making it the ideal choice for any season. Whether you are hitting the gym or the boardroom, Fresh keeps you at your absolute peak performance and clarity.', '₹2,299', 'Unisex')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card unisex">
+            <img src="images/amore.jpg" alt="Amore">
+            <div class="scent-info">
+                <h3>Amore</h3>
+                <p class="description">A universal romantic scent featuring warm golden amber and soft musk. This fragrance speaks the language of love through its comforting and inviting notes. It feels like a warm embrace, perfect for both men and women who appreciate true intimacy. A versatile choice for shared moments, it creates a magnetic aura of warmth and affection around the wearer.</p>
+                <p class="price-val">₹2,899</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Amore')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Amore', 'images/amore.jpg', 'A universal romantic scent featuring warm golden amber and soft musk. This fragrance speaks the language of love through its comforting and inviting notes. It feels like a warm embrace, perfect for both men and women who appreciate true intimacy. A versatile choice for shared moments, it creates a magnetic aura of warmth and affection around the wearer.', '₹2,899', 'Unisex')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="scent-card unisex">
+            <img src="images/dreams.jpg" alt="Dreams">
+            <div class="scent-info">
+                <h3>Dreams</h3>
+                <p class="description">An ethereal blend of soothing lavender and cosmic stardust accords. This unique fragrance is designed to be calming, dream-like, and boundary-breaking. Its soft, ozonic heart makes it incredibly unique, offering a sense of peace and mystery in every spray. Perfect for those who march to the beat of their own drum and seek a scent as unique as their own imagination.</p>
+                <p class="price-val">₹2,550</p>
+                <div class="button-group">
+                    <button class="cart-btn" onclick="addToCart('Dreams')">Add to Cart</button>
+                    <button class="details-btn" onclick="openModal('Dreams', 'images/dreams.jpg', 'An ethereal blend of soothing lavender and cosmic stardust accords. This unique fragrance is designed to be calming, dream-like, and boundary-breaking. Its soft, ozonic heart makes it incredibly unique, offering a sense of peace and mystery in every spray. Perfect for those who march to the beat of their own drum and seek a scent as unique as their own imagination.', '₹2,550', 'Unisex')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="pModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-flex">
+            <img id="m-img" src="" alt="Detail View">
+            <div class="m-text">
+                <h2 id="m-title"></h2>
+                <p id="m-gender" style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; color: #888; margin-bottom: 5px;"></p>
+                <p id="m-desc" style="text-align: justify; line-height: 1.6; color: #444;"></p>
+                <p id="m-price" style="font-size: 1.8rem; color:#c5a059; font-weight:bold; margin: 15px 0;"></p>
+                <button class="cart-btn" style="width: 100%;" onclick="addToCartFromModal()">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+<script>
+    let currentCat = 'all';
+
+    function filterCat(c, e) {
+        currentCat = c;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+        applyFilters();
+    }
+
+    function applyFilters() {
+        document.querySelectorAll('.scent-card').forEach(card => {
+            const matchesCat = currentCat === 'all' || card.classList.contains(currentCat);
+            card.style.display = matchesCat ? "inline-block" : "none";
+        });
+    }
+
+    function openModal(t, i, d, p, g) {
+        document.getElementById('m-title').innerText = t;
+        document.getElementById('m-img').src = i;
+        document.getElementById('m-desc').innerText = d;
+        document.getElementById('m-price').innerText = p;
+        document.getElementById('m-gender').innerText = "For: " + g;
+        document.getElementById('pModal').style.display = "block";
+    }
+
+    function closeModal() { document.getElementById('pModal').style.display = "none"; }
+
+    function addToCart(itemName, itemPrice) {
+        if (itemPrice === undefined) {
+            const allItems = document.querySelectorAll('.scent-info');
+            for (let info of allItems) {
+                if (info.querySelector('h3').innerText === itemName) {
+                    let priceText = info.querySelector('.price-val').innerText;
+                    itemPrice = parseFloat(priceText.replace(/[^0-9.-]+/g, ""));
+                    break;
+                }
+            }
+        }
+
+        let cart = JSON.parse(localStorage.getItem('luxeCart')) || [];
+        cart.push({ name: itemName, price: parseFloat(itemPrice) });
+        localStorage.setItem('luxeCart', JSON.stringify(cart));
+
+        const toast = document.getElementById('cart-toast');
+        toast.innerText = itemName + " (₹" + itemPrice + ") added to cart!";
+        toast.classList.add('show');
+        setTimeout(() => { toast.classList.remove('show'); }, 3000);
+    }
+
+    function addToCartFromModal() {
+        const title = document.getElementById('m-title').innerText;
+        const priceText = document.getElementById('m-price').innerText; 
+        const priceValue = parseFloat(priceText.replace(/[^0-9.-]+/g, "")); 
+        addToCart(title, priceValue);
+        closeModal();
+    }
+</script>
+
+</body>
+</html>

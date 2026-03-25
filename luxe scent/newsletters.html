@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Newsletters | LUXE SCENTS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== BRIGHT LUXURY VARIABLES ===== */
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --soft-cream: #fdfbf7;
+            --white: #ffffff;
+            --border: rgba(197, 160, 89, 0.2);
+            --text-gray: #666666;
+        }
+
+        /* ===== GLOBAL STYLES ===== */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif; /* Matched to seo.html */
+            background-color: var(--soft-cream);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif; /* Matched to seo.html */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif; /* Matched to seo.html */
+            font-size: 1.6rem;
+            font-weight: bold; /* Matched to seo.html */
+            letter-spacing: 4px;
+            color: var(--dark);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            margin-left: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500; /* Matched to seo.html */
+            letter-spacing: 1px; /* Added letter spacing to match seo.html */
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active { color: var(--gold); }
+
+        /* ===== HERO SECTION ===== */
+        .newsletter-hero {
+            padding: 120px 10%;
+            text-align: center;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .newsletter-hero span {
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 5px;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+
+        .newsletter-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+
+        .newsletter-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            font-family: 'Lora', serif; /* Kept Lora here for editorial aesthetic */
+            font-style: italic;
+        }
+
+        /* ===== CONTENT LAYOUT ===== */
+        .content-container {
+            padding: 80px 10%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .info-box {
+            background: var(--white);
+            padding: 50px;
+            border: 1px solid var(--border);
+            transition: 0.4s;
+        }
+
+        .info-box h2 {
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* ===== ALTERNATING PREVIEW LAYOUT ===== */
+        .preview-layout {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+
+        .preview-layout:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .preview-text { flex: 1; }
+
+        .preview-text h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .preview-text p {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .preview-img-wrapper { flex: 1; }
+
+        .preview-img-wrapper img {
+            width: 100%;
+            border: 1px solid var(--border);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: transform 0.5s ease;
+        }
+
+        .preview-img-wrapper img:hover {
+            transform: scale(1.03);
+        }
+
+        /* ===== SUBSCRIBE SECTION ===== */
+        .subscribe-section {
+            background: var(--soft-cream);
+            color: var(--dark);
+            padding: 100px 10%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .subscribe-section h2 {
+            color: var(--dark);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-section p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        input[type="email"] {
+            padding: 18px 25px;
+            width: 400px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--dark);
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif; /* Matched font */
+            outline: none;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--white);
+            padding: 18px 50px;
+            border: 1px solid var(--gold);
+            font-family: 'Montserrat', sans-serif; /* Matched font */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+       /* --- UNIFIED FOOTER STYLES (Matched exactly to seo.html) --- */
+        .footer {
+            background: #121212;
+            color: #ffffff;
+            padding: 60px 5% 30px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 80px; /* Added spacing above footer */
+        }
+
+        .footer h3 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .social-icons {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .social-icons i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-name {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+
+        .social-icons a:hover {
+            color: #c5a059;
+        }
+
+        .social-icons a:hover i {
+            transform: translateY(-5px);
+        }
+
+        .social-icons a:hover .social-name {
+            opacity: 1;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">LUXE SCENTS</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<section class="newsletter-hero">
+    <span>CULTIVATING OLFACTORY INTELLIGENCE</span>
+    <h1>The Editorial Gazette</h1>
+    <p>A weekly invitation to explore the intersection of botanical science, ancient heritage, and the avant-garde world of luxury scent.</p>
+</section>
+
+<div class="content-container">
+    <div class="info-grid">
+        <div class="info-box">
+            <h2>The Value-First Protocol</h2>
+            <p>Our communications are designed to serve, not sell. We provide in-depth analyses of molecular structures and layering masterclasses.</p>
+        </div>
+        <div class="info-box">
+            <h2>Frequency & Intent</h2>
+            <p>We honor your digital peace. You will receive exactly one volume per week, curated by our Master Perfumers.</p>
+        </div>
+    </div>
+
+    <section class="editorial-section">
+        <div class="preview-layout">
+            <div class="preview-text">
+                <h3>Vol. I: The Scent Library</h3>
+                <p>Beyond the bottle. We deconstruct the Olfactory Pyramid, explaining the volatility of Reggio Bergamot versus the deep resonance of Agarwood.</p>
+                <p style="font-weight: 600; color: var(--gold);">Theme: Molecular Botanical Science</p>
+            </div>
+            <div class="preview-img-wrapper">
+                <img src="images/vol-1.jpg" alt="Scent Library Preview">
+            </div>
+        </div>
+
+        <div class="preview-layout">
+            <div class="preview-text">
+                <h3>Vol. II: The Inner Circle</h3>
+                <p>The sanctuary of the elite. VIP members receive private invitations to our "Vault Sessions," offering early acquisition rights to small-batch vintages.</p>
+                <p style="font-weight: 600; color: var(--gold);">Theme: Exclusivity & Acquisition</p>
+            </div>
+            <div class="preview-img-wrapper">
+                <img src="images/vol-2.jpg" alt="VIP Access Preview">
+            </div>
+        </div>
+    </section>
+</div>
+
+<section class="subscribe-section">
+    <h2>Enter the Atelier</h2>
+    <p>Join 50,000+ connoisseurs and receive our next editorial volume directly to your inbox.</p>
+    <div class="subscribe-form">
+        <input type="email" placeholder="YOUR@EMAIL.COM">
+        <button class="btn-gold">Subscribe</button>
+    </div>
+</section>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

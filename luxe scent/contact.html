@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | LUXE SCENTS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        /* --- Existing Global & Header Styles --- */
+        :root { 
+            --gold: #c5a059; 
+            --dark: #1a1a1a; 
+            --border: #eee; 
+            --white: #ffffff;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--dark); }
+        h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 8%; background: var(--white); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo { 
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            letter-spacing: 5px; 
+            text-transform: uppercase;
+        }
+        nav a { margin-left: 20px; font-size: 0.7rem; color: #4a4a4a; text-transform: uppercase; text-decoration: none; font-weight: 400; letter-spacing: 2px; transition: 0.3s; }
+        nav a:hover, nav a.active { color: var(--gold); }
+
+        /* --- Contact Container --- */
+        .section {
+            padding: 80px 8%;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+
+        .contact-card h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--dark); }
+        .contact-card h3 { font-size: 1.4rem; color: var(--gold); margin-bottom: 10px; }
+
+        /* --- Form Styling --- */
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 14px; margin-bottom: 18px;
+            border-radius: 10px; border: 1px solid #ddd; font-family: inherit;
+        }
+        .submit-btn {
+            background-color: var(--dark); color: white; padding: 14px 35px;
+            border-radius: 30px; font-weight: 600; border: none; cursor: pointer; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;
+        }
+        .submit-btn:hover { background-color: var(--gold); }
+
+        /* --- MAP CONTAINER --- */
+        .map-container {
+            margin-top: 80px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            display: block;
+            border: 0;
+            filter: grayscale(10%) contrast(1.1);
+        }
+
+        /* --- UNIFIED FOOTER STYLES --- */
+        .footer {
+            background: var(--dark);
+            color: #ffffff;
+            padding: 60px 5% 30px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer h3 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .social-icons {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .social-icons i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-name {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .social-icons a:hover { color: var(--gold); }
+        .social-icons a:hover i { transform: translateY(-5px); }
+        .social-icons a:hover .social-name { opacity: 1; letter-spacing: 3px; }
+
+        @media (max-width: 1000px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .section { padding: 60px 30px; }
+            .header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">LUXE SCENTS</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<main class="section">
+    <h1 style="text-align: center; font-size: 3.5rem; margin-bottom: 60px; font-family: 'Cinzel', serif; letter-spacing: 2px;">Contact Our Atelier</h1>
+
+    <div class="contact-grid">
+        <div class="contact-card">
+            <h2>Send Us a Message</h2>
+            <p style="color: #666; margin-bottom: 25px;">Our concierge specialists are ready to assist you with your olfactory journey.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject">
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <div>
+            <div class="contact-card" style="margin-bottom: 30px;">
+                <h3>Our Address</h3>
+                <p>123 Luxury Lane, Fragrance District<br>Mumbai, MH 400001</p>
+            </div>
+            <div class="contact-card" style="margin-bottom: 30px;">
+                <h3>Concierge Phone</h3>
+                <p>+91 99999 99999</p>
+            </div>
+            <div class="contact-card">
+                <h3>Email Inquiries</h3>
+                <p>concierge@luxescents.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120658.46327663458!2d72.76891638692728!3d19.082197500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d4673b!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</main>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

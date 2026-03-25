@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Scent Library | Luxe Scents Editorial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #121212;
+            --gray: #666666;
+            --light-bg: #faf9f6; 
+            --white: #ffffff;
+            --border: #eaeaea;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- LUXURY NAVIGATION --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: var(--dark);
+            text-transform: uppercase;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 20px;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            transition: color 0.4s ease;
+        }
+
+        nav a:hover, nav a.active { color: var(--gold); }
+
+        /* --- BLOG HERO --- */
+        .blog-hero {
+            height: 60vh;
+            min-height: 400px;
+            /* UPDATED PATH: Pointing to the images folder */
+            background: linear-gradient(rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.6)), 
+                        url('images/blog.jfif') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero-text-box { max-width: 800px; }
+
+        .category-tag {
+            color: #000000; /* Changed from gold to solid black */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 600; /* Added a bit of thickness so it stands out */
+        }
+
+        .blog-hero h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--white);
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .blog-meta {
+            color: var(--gold); /* Updated to your signature gold */
+            font-size: 0.85rem;
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-weight: 500; /* Added a tiny bit of weight so the gold stands out clearly */
+        }
+
+        /* --- EDITORIAL ARTICLE --- */
+        .article-container {
+            max-width: 740px;
+            margin: -60px auto 80px;
+            background: var(--white);
+            padding: 60px 8%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-content {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #333;
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            padding-right: 15px;
+            padding-top: 10px;
+            color: var(--gold);
+        }
+
+        .article-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin: 50px 0 20px;
+            font-weight: 600;
+        }
+
+        .article-content p { margin-bottom: 25px; }
+
+        .article-quote {
+            border-left: 3px solid var(--gold);
+            padding: 20px 0 20px 30px;
+            margin: 40px 0;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--gold);
+            line-height: 1.6;
+        }
+
+        .highlight-term {
+            color: var(--dark);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- AUTHOR BIO --- */
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .author-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 { font-family: 'Cinzel', serif; font-size: 1.1rem; margin-bottom: 5px; }
+        .author-info p { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: var(--gray); margin-bottom: 0; line-height: 1.5; }
+
+        /* --- CTA SECTION --- */
+        .article-cta { text-align: center; padding: 60px 0 20px; }
+        .article-cta h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 20px; }
+        .btn-solid {
+            display: inline-block; background: var(--dark); color: var(--white);
+            padding: 15px 35px; text-decoration: none; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 3px; transition: all 0.4s ease;
+        }
+        .btn-solid:hover { background: var(--gold); }
+
+        /* --- FOOTER --- */
+        .footer {
+            background: var(--dark); color: var(--white);
+            padding: 60px 5% 30px; text-align: center; font-family: 'Montserrat', sans-serif;
+        }
+        .footer h3 { font-family: 'Cinzel', serif; margin-bottom: 10px; letter-spacing: 1px; font-weight: 400; }
+        .social-icons { margin: 40px 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; }
+        .social-icons a { color: var(--white); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 10px; transition: all 0.4s ease; }
+        .social-icons i { font-size: 1.4rem; transition: transform 0.3s ease; }
+        .social-name { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; }
+        .social-icons a:hover { color: var(--gold); }
+        .social-icons a:hover i { transform: translateY(-5px); }
+        .social-icons a:hover .social-name { opacity: 1; letter-spacing: 3px; }
+
+        @media (max-width: 768px) {
+            .blog-hero h1 { font-size: 2.2rem; }
+            .article-container { padding: 40px 5%; margin-top: -30px; }
+            .header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 8px; font-size: 0.65rem; }
+            .article-quote { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">LUXE SCENTS</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<section class="blog-hero">
+    <div class="hero-text-box">
+        <span class="category-tag">Olfactory Education</span>
+        <h1>Unveiling Your Invisible Wardrobe</h1>
+        <p class="blog-meta">By The Luxe Editorial Team &nbsp;|&nbsp; Masterclass Series</p>
+    </div>
+</section>
+
+<section class="article-container">
+    <div class="article-content">
+        <p class="drop-cap">Your scent is your ultimate silent introduction. It is a powerful, invisible tool that lingers in a room long after you have departed. Selecting luxury perfumes is about far more than simply smelling pleasant; it is the art of curating an extension of your unique identity. Whether your presence is bold and commanding or soft and eternally elegant, your signature fragrance tells your story to the world without you ever having to speak a single word.</p>
+
+        <p>However, navigating the world of high-end perfumery can feel overwhelming. With thousands of bottles lining department store shelves, how do you find the one that truly feels like <em>you</em>? The secret lies in treating fragrance exactly like a tailored suit or a bespoke dress: it requires understanding the structure, the materials, and the fit.</p>
+
+        <div class="article-quote">
+            "A woman's perfume tells more about her than her handwriting." <br>— Christian Dior
+        </div>
+
+        <h2>The Anatomy of a Fragrance</h2>
+        <p>The first step to finding your match is understanding the <span class="highlight-term">Olfactory Pyramid</span>. A true luxury fragrance is not a flat scent; it is a living, breathing composition that evolves on your skin over time. It is built in three distinct layers:</p>
+
+        <p><strong>The Top Notes:</strong> This is the initial impression. These light, highly volatile molecules (often citrus, light fruits, or fresh herbs) hit your nose immediately upon spraying but usually fade within the first 15 to 30 minutes.</p>
+        
+        <p><strong>The Heart (Middle) Notes:</strong> As the top notes evaporate, the true character of the perfume emerges. These are usually robust florals, spices, or green notes. They make up the core of the fragrance and last for several hours.</p>
+
+        <p><strong>The Base Notes:</strong> This is the foundation. Rich, heavy molecules like <span class="highlight-term">Midnight Oud</span>, vanilla, amber, and musk. These notes mingle with your unique skin chemistry and provide the lingering trail (sillage) that stays with you all day.</p>
+
+        <h2>Decoding the Fragrance Families</h2>
+        <p>Fragrances are broadly categorized into "families." Identifying which family naturally draws you in is the easiest way to narrow down your search in our scent library.</p>
+        <p>If you enjoy warmth, mystery, and seduction, you will likely gravitate toward <strong>Woody & Amber</strong> profiles (think sandalwood, patchouli, and rich resins). If you prefer something vibrant, energetic, and clean, the <strong>Fresh & Aquatic</strong> family is your domain. For those who lean into romance and classic femininity, the expansive world of <strong>Floral</strong> scents (like our beloved Blooming Bouquet) remains the ultimate gold standard.</p>
+
+        <h2>The Art of the Test</h2>
+        <p>The most common mistake people make when choosing a signature scent is buying a bottle based on how it smells on a paper blotter in a store. Paper has no pulse, no heat, and no natural oils.</p>
+        <p>To truly test a luxury perfume, you must wear it. Spray it directly onto your pulse points—the wrists, the neck, or the inner elbows—and then walk away. Let the fragrance live on you for at least two to three hours so you can experience the full journey from the bright top notes down to the anchoring base. Only then will you know if the scent truly matches your chemistry and your personality.</p>
+    </div>
+
+    <div class="author-box">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=250&auto=format&fit=crop" alt="Editorial Director">
+        <div class="author-info">
+            <h4>Elena Rostova</h4>
+            <p>Master Perfumer & Lead Editor at Luxe Scents. Elena has spent over a decade studying traditional French perfumery in Grasse and specializes in bespoke scent profiling.</p>
+        </div>
+    </div>
+
+    <div class="article-cta">
+        <h3>Ready to discover your signature?</h3>
+        <p style="color: var(--gray); font-family: 'Lora', serif; margin-bottom: 30px;">Step into the Fragrance Library and explore our curated masterpieces.</p>
+        <a href="collection.html" class="btn-solid">Explore The Collection</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

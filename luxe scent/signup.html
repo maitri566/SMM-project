@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up | Luxe Scents</title>
+	<style>
+    :root {
+        --gold: #c5a059;
+        --soft-gold: #e5d1a8;
+        --bg-cream: #fdfbf7;
+        --text-main: #2c2c2c;
+        --white: #ffffff;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        /* Soft, elegant gradient for a bright atmosphere */
+        background: linear-gradient(135deg, #fdfbf7 0%, #ffffff 100%);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-main);
+    }
+
+    /* The Main Container */
+    .auth-box {
+        background: var(--white);
+        padding: 60px 50px;
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+        position: relative;
+        /* Soft, deep shadow to create a "floating" paper effect */
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.02);
+        border: 1px solid rgba(197, 160, 89, 0.15);
+    }
+
+    /* Elegant inner border decoration */
+    .auth-box::after {
+        content: "";
+        position: absolute;
+        top: 15px; left: 15px; right: 15px; bottom: 15px;
+        border: 1px solid rgba(197, 160, 89, 0.1);
+        pointer-events: none;
+    }
+
+    h2 {
+        font-family: 'Cinzel', serif;
+        font-size: 2rem;
+        letter-spacing: 5px;
+        margin-bottom: 40px;
+        color: var(--gold);
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    /* Input Groups */
+    .input-group {
+        position: relative;
+        margin-bottom: 35px;
+    }
+
+    input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1.5px solid #e0e0e0;
+        padding: 10px 0;
+        color: var(--text-main);
+        font-size: 1rem;
+        outline: none;
+        transition: 0.4s ease;
+    }
+
+    input:focus {
+        border-bottom: 1.5px solid var(--gold);
+    }
+
+    /* Floating Labels */
+    label {
+        position: absolute;
+        left: 0;
+        top: 10px;
+        color: #999;
+        pointer-events: none;
+        transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+
+    input:focus + label, 
+    input:valid + label {
+        top: -20px;
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 2px;
+    }
+
+    /* Premium Button Style */
+    button {
+        width: 100%;
+        padding: 16px;
+        background: var(--gold);
+        color: var(--white);
+        border: none;
+        font-family: 'Cinzel', serif;
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        margin-top: 10px;
+        box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+    }
+
+    button:hover {
+        background: var(--text-main);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer Links */
+    .auth-footer {
+        margin-top: 35px;
+        font-size: 0.8rem;
+        color: #777;
+    }
+
+    a {
+        color: var(--gold);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+        border-bottom: 1px solid transparent;
+    }
+
+    a:hover {
+        color: var(--text-main);
+        border-bottom: 1px solid var(--text-main);
+    }
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="auth-body">
+    <div class="auth-box">
+        <h2>Create Account</h2>
+        <form action="index.html">
+            <div class="input-group">
+                <input type="text" required>
+                <label>Full Name</label>
+            </div>
+            <div class="input-group">
+                <input type="email" required>
+                <label>Email Address</label>
+            </div>
+            <div class="input-group">
+                <input type="password" required>
+                <label>Create Password</label>
+            </div>
+            <button type="submit">Join Luxe Scents</button>
+        </form>
+        <div class="auth-footer">
+            <p>Already a member? <a href="login.html">Login</a></p>
+            <p style="margin-top:15px;"><a href="index.html" style="font-size: 0.7rem; opacity: 0.6;">← Back to Home</a></p>
+        </div>
+    </div>
+</body>
+</html>

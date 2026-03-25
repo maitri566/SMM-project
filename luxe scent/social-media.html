@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE SCENTS | Social Influence & Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #121212; /* Synced with other page primary-dark */
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+            --text-gray: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        /* --- Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: var(--white);
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        nav a {
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1615396899839-c99c121888b0?auto=format&fit=crop&q=80&w=1600') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* --- Introduction --- */
+        .intro {
+            padding: 80px 10%;
+            text-align: center;
+            background-color: var(--light-gray);
+        }
+
+        .intro h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        /* --- Community Grid --- */
+        .section {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .media-card {
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .media-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+
+        .media-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .media-content {
+            padding: 30px;
+        }
+
+        .media-content h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .media-content p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        /* --- Meta Stats --- */
+        .media-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .badge-promoted {
+            background: var(--dark);
+            color: var(--gold);
+            padding: 3px 10px;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* --- UNIFIED LUXURY FOOTER --- */
+        .footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 60px 5% 30px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .social-icons {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .social-icons i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-name {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+
+        .social-icons a:hover i {
+            transform: translateY(-5px);
+        }
+
+        .social-icons a:hover .social-name {
+            opacity: 1;
+            letter-spacing: 3px;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            header { flex-direction: column; padding: 20px; }
+            nav { margin-top: 20px; }
+            nav a { margin: 0 10px; font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">LUXE SCENTS</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Digital Resonance</h1>
+        <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem;">Building Trust in a Digital Age</p>
+    </div>
+</section>
+
+<section class="intro">
+    <h2>Our Social Philosophy</h2>
+    <p>
+        The primary goal of our social media marketing campaign is brand awareness and establishing social trust. 
+        As we deepen our influence, social media transcends simple posting to become a vital direct sales channel and a 
+        robust lead generation engine.
+    </p>
+</section>
+
+<section class="section">
+    <div class="media-grid">
+        
+        <div class="media-card">
+            <img src="images/aff1.webp" alt="Visual Storytelling">
+            <div class="media-content">
+                <h4>Visual Storytelling</h4>
+                <p>We use curated imagery to establish brand awareness, ensuring Luxe Scents remains a symbol of elegance across every platform.</p>
+                <div class="media-meta">
+                    <span><i class="far fa-eye"></i> 12.4K Reach</span>
+                    <span><i class="far fa-heart"></i> 1.2K</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-card">
+            <img src="images/aff2.webp" alt="Promoted Content">
+            <div class="media-content">
+                <span class="badge-promoted">Promoted Strategy</span>
+                <h4>Targeted Outreach</h4>
+                <p>Utilizing promoted posts to reach highly specific demographics, driving acquisition and community growth.</p>
+                <div class="media-meta">
+                    <span><i class="fas fa-chart-line"></i> +45% Leads</span>
+                    <span><i class="far fa-comment"></i> 342</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-card">
+            <img src="images/aff3.jpg" alt="Community Engagement">
+            <div class="media-content">
+                <h4>Establishing Social Trust</h4>
+                <p>Authenticity is our currency. By engaging directly with followers, we turn digital interest into unshakable social trust.</p>
+                <div class="media-meta">
+                    <span><i class="fas fa-users"></i> Community</span>
+                    <span><i class="far fa-heart"></i> 2.8K</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-card">
+            <img src="images/aff4.jpg" alt="Sales Channel">
+            <div class="media-content">
+                <h4>The Direct Sales Channel</h4>
+                <p>Transforming social engagement into a direct sales channel, allowing connoisseurs to purchase instantly from their feed.</p>
+                <div class="media-meta">
+                    <span><i class="fas fa-shopping-bag"></i> Shop Now</span>
+                    <span><i class="far fa-star"></i> 5.0</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

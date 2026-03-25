@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Scent | Detailed Expert Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        /* --- Root Variables & Global Resets --- */
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --light-bg: #fdfdfd;
+            --text-gray: #555;
+            --border: #eee;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav a {
+            margin-left: 15px;
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold);
+        }
+
+        /* --- Layout Container --- */
+        .perfume-container {
+            display: flex;
+            gap: 60px;
+            padding: 80px 8%;
+            max-width: 1400px;
+            margin: auto;
+            align-items: flex-start;
+        }
+
+        /* --- Video Sidebar --- */
+        .video-sidebar {
+            flex: 0 0 400px;
+            position: sticky;
+            top: 120px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-caption {
+            padding: 30px;
+            background: var(--light-bg);
+            margin-top: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .video-caption h3 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .buy-btn {
+            background: var(--dark);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: 0.4s ease;
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .buy-btn:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+        }
+
+        /* --- Main Content Area --- */
+        .content-main {
+            flex: 1;
+        }
+
+        .content-main h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+
+        .long-text {
+            font-size: 1.15rem;
+            color: #333;
+        }
+
+        .intro {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 50px;
+            padding-left: 30px;
+            border-left: 4px solid var(--gold);
+            font-style: italic;
+            color: var(--text-gray);
+        }
+
+        .long-text h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            margin: 60px 0 25px;
+            color: var(--dark);
+        }
+
+        .long-text p {
+            margin-bottom: 30px;
+        }
+
+        /* --- Footer Styles Matching index.html --- */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 5% 30px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer h3 {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .social-icons {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .social-icons i {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-name {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            opacity: 0.6;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+
+        .social-icons a:hover i {
+            transform: translateY(-5px);
+        }
+
+        .social-icons a:hover .social-name {
+            opacity: 1;
+            letter-spacing: 3px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1100px) {
+            .perfume-container {
+                flex-direction: column;
+                padding: 60px 5%;
+            }
+            .video-sidebar {
+                flex: none;
+                width: 100%;
+                position: static;
+                margin-bottom: 60px;
+            }
+            .content-main h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 5px;
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">LUXE SCENTS</div>
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Fragrance Library</a>
+    <a href="promotions.html">Offers</a>
+    <a href="blog.html">Editorial</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="cart.html" class="nav-icon" title="View Cart" style="margin-left: 20px;">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+    <a href="login.html" class="nav-icon" title="Login">
+        <i class="fa-solid fa-circle-user"></i>
+    </a>
+</nav>
+</header>
+
+<section class="perfume-container">
+    <div class="video-sidebar">
+        <div class="video-wrapper">
+            <iframe src="videos/aff-v.mp4" 
+                    title="Perfume Experience" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <div class="video-caption">
+            <h3>The Expert Verdict</h3>
+            <p>Watch our lead olfactory specialist provide high praise for this signature blend's exceptional longevity and mesmerizing sillage.</p>
+            <a href="collection.html" class="buy-btn">Acquire Your Bottle</a>
+        </div>
+    </div>
+
+    <div class="content-main">
+        <h1>The Art of the Scent: A Masterclass in Olfactory Perfection</h1>
+        
+        <div class="long-text">
+            <p class="intro"><strong>Chapter 1: The Invisible Language.</strong> Your perfume is not merely a grooming accessory; it is the most intense form of memory. It is an invisible signature, a portal to the past, and a powerful promise for the future.</p>
+            
+            <p>In the vast and often overwhelming world of modern perfumery, true masterpieces are rare. Many fragrances announce themselves with overwhelming synthetic volume, only to fade into a powdery, forgettable whisper within hours. But occasionally, a scent emerges that entirely redefines our understanding of luxury. Today, we are undertaking a comprehensive exploration of a fragrance that has captured the attention of master perfumers and discerning collectors alike.</p>
+
+            <h2>The Molecular Symphony: Deconstructing the Notes</h2>
+            <p>To truly understand the brilliance of this scent, one must first understand the uncompromising chemistry and the absolute dedication to raw ingredient sourcing. The architecture of a premium fragrance is built on the classic pyramid: top notes, heart (or middle) notes, and the base. However, this blend refuses to behave like a standard linear perfume.</p>
+            
+            <p>The opening is a revelation. Instead of the sharp, alcohol-heavy blast characteristic of mass-market colognes, this fragrance opens with a luminous, zesty burst of Calabrian Bergamot. This is not the synthetic, flat citrus found in department stores; this bergamot is crisp, tart, and rounded, evoking the feeling of a sun-drenched Italian orchard at dawn. Almost immediately, it is joined by a subtle hint of spicy pink peppercorn, which dances on the skin and awakens the senses.</p>
+
+            <p>As the top notes begin their graceful exit—roughly thirty minutes into the wear—the true heart of the fragrance reveals itself. Here, we find the undisputed star of the composition: Rose de Mai. Sourced exclusively from sustainable, organic farms in Grasse, France, this rose is neither powdery nor dated. It is a lush, dewy, deeply romantic floral note that feels freshly cut. The perfumer has masterfully balanced this floral intensity with a touch of earthy iris, preventing the scent from ever becoming overly sweet or cloying.</p>
+
+            <h2>The Foundation: Sustainable Oud and Ambergris</h2>
+            <p>While the top and heart notes provide the initial romance, it is the base notes that dictate a perfume's legacy. This is where the true investment value of the fragrance lies. The foundation is built upon a pillar of sustainably harvested Oud.</p>
+
+            <p>Oud (agarwood) is notoriously difficult to work with. In the wrong hands, it can become aggressive, medicinal, or overwhelmingly smoky. Here, however, the Oud is refined, smoothed out, and deeply integrated into the composition. It provides a resonant, woody warmth that hums quietly in the background. Paired with a cruelty-free, highly advanced synthetic ambergris, the base develops a slightly salty, musky, and highly addictive skin-scent that feels entirely organic to the wearer.</p>
+
+            <h2>Sillage and Longevity: The Technical Performance</h2>
+            <p>For fragrance aficionados, a beautiful scent profile is meaningless if the performance is poor. In our rigorous testing across various climates and skin chemistries, this fragrance demonstrated what we call "polite power."</p>
+
+            <p>The sillage—the invisible trail left behind as you move—is perfectly calibrated. It does not enter the room before you do, which is a hallmark of cheap formulation. Instead, it creates an intimate, two-foot aura around the wearer. It invites people to lean in closer. </p>
+
+            <p>Regarding longevity, this is an undeniable powerhouse. A modest application of three sprays (pulse points on the neck and wrists) consistently yielded 10 to 12 hours of active performance. Even after a full day of wear, transitioning from a demanding office environment to an evening dinner, the warm, amber-oud base remained distinctly detectable on the skin. On clothing, the scent can linger beautifully for days.</p>
+
+            <h2>Why Experts Are Calling This a Masterpiece</h2>
+            <p>The fragrance community is famously critical, yet this composition has achieved near-universal acclaim. The consensus among master "noses" is that it achieves the holy grail of perfumery: it is simultaneously familiar and entirely unprecedented.</p>
+
+            <p>It masterfully bridges the gap between traditional Middle Eastern perfumery (with its reliance on heavy resins, woods, and oud) and classical French perfumery (championing citrus, florals, and structure). The result is a highly versatile, trans-seasonal fragrance. It possesses enough brightness to be worn during a crisp spring morning, yet harbors enough depth and mystery to serve as an intoxicating signature scent for formal winter evenings.</p>
+
+            <h2>The Final Verdict: An Investment in Presence</h2>
+            <p>At its price point, this is undeniably a luxury acquisition. It is not an impulse purchase. However, when you factor in the concentration of the oils, the impeccable sourcing of the raw materials, and the sheer longevity of a single bottle, the value proposition becomes clear.</p>
+
+            <p>You are not merely buying colored water in a glass bottle. You are investing in an invisible garment that speaks on your behalf before you even say a word. It projects confidence, refinement, and an effortless sense of style. If you are searching for a signature scent that will set you apart from the crowd—a fragrance that prompts the question, <em>"What are you wearing?"</em>—this is, without question, the masterpiece you have been waiting for.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-bottom: 40px; text-align: left;">
+        
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">The Experience</h4>
+            <a href="video.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Cinema & Video</a>
+            <a href="affiliate.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Expert Reviews</a>
+            <a href="aso.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Mobile App</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Community</h4>
+            <a href="email.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">VIP Access</a>
+            <a href="newsletters.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">The Gazette</a>
+        </div>
+
+        <div>
+            <h4 style="font-family: 'Cinzel', serif; margin-bottom: 15px; color: #c5a059;">Corporate</h4>
+            <a href="career.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Careers</a>
+            <a href="swot.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">SWOT Analysis</a>
+            <a href="reputation.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Brand Reputation</a>
+            <a href="social-media.html" style="display: block; color: white; text-decoration: none; font-size: 0.8rem; margin-bottom: 8px;">Social Strategy</a>
+        </div>
+
+    </div>
+
+    <h3 style="color: white; margin-top: 40px;">Connect With Us</h3>
+    <div class="social-icons">
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i><span class="social-name">Instagram</span></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i><span class="social-name">Facebook</span></a>
+        <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i><span class="social-name">Pinterest</span></a>
+        <a href="#" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i><span class="social-name">Twitter</span></a>
+        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i><span class="social-name">YouTube</span></a>
+        <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="social-name">WhatsApp</span></a>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">&copy; 2026 Luxe Scents. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
